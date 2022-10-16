@@ -3,7 +3,6 @@
     <transition name="fade">
       <div v-if="isModalOpen" class="modal-wrapper">
         <div class="modal-background" @click="$_modalClose"></div>
-
         <div class="modal-container"></div>
       </div>
     </transition>

@@ -1,4 +1,5 @@
 <template>
+
   <div
     :class="isScrollDown && !isMouseOnHeading ? 'heading shrink' : 'heading'"
     @mouseenter="() => setMouseOnHeading(true)"

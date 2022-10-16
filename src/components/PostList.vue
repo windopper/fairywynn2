@@ -1,19 +1,24 @@
 <template>
   <div class="post-list-container">
+    <PostOptions />
     <slot />
   </div>
 </template>
 
 <script>
+import PostOptions from "./PostOptions.vue";
 export default {
-  name: "PostList"
+  name: "PostList",
+  components: {
+    PostOptions
+  }
 };
 </script>
 
 <style scoped>
 .post-list-container {
   position: relative;
-  top: 80px;
+  top: 60px;
   width: 100%;
   min-height: 100px;
   height: fit-content;
