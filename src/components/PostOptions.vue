@@ -1,6 +1,6 @@
 <template>
   <div class="post-options-container">
-    <div class="post-options-item" @click="() => to('write')">
+    <div class="post-options-item" @click="() => navigate('/write')">
       <span class="material-symbols-outlined">
         edit
       </span>
@@ -17,8 +17,7 @@
 export default {
   name: "PostOptions",
   methods: {
-    to: function(path) {
-      console.log("hi");
+    navigate: function(path) {
       this.$router.push(path);
       //TODO
     }
@@ -37,7 +36,7 @@ export default {
 }
 
 .post-options-item {
-  height: 70%;
+  height: 60%;
   display: flex;
   align-items: center;
   padding: 3px 5px;
