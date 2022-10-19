@@ -2,6 +2,7 @@
   <div class="header-container">
     <button @click="$_setToMarkDowned">parse to markdown</button>
     <button @click="$_setToRaw">parse to raw</button>
+    <button></button>
   </div>
 </template>
 
@@ -25,7 +26,6 @@ export default {
 
 <style scoped>
 .header-container {
-  margin: 1rem;
   width: 100%;
   font-size: 3rem;
   padding: 1rem 0.5rem;

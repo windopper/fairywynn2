@@ -8,11 +8,13 @@
     :markDownedContent="markDownedContent"
     :showingContentType="showingContentType"
   />
+  <PostWriteFooter v-model:tags="tags" />
 </template>
 
 <script>
 import PostWriteBody from "../components/postwrite/PostWriteBody.vue";
 import PostWriteHeader from "../components/postwrite/PostWriteHeader.vue";
+import PostWriteFooter from "../components/postwrite/PostWriteFooter.vue";
 import { marked } from "marked";
 export default {
   name: "PostWriteView",
@@ -20,13 +22,15 @@ export default {
     return {
       title: "",
       content: "",
+      tags: ["test", "1", "23232332"],
       markDownedContent: "",
       showingContentType: "RAW" // RAW, MARKDOWNED
     };
   },
   components: {
     PostWriteBody,
-    PostWriteHeader
+    PostWriteHeader,
+    PostWriteFooter
   },
   methods: {
     setShowingContentType: function(type) {
