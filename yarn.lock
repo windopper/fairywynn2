@@ -2844,6 +2844,11 @@
   optionalDependencies:
     prettier "^1.18.2"
 
+"@vue/devtools-api@^6.0.0-beta.11":
+  version "6.4.5"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.4.5.tgz#d54e844c1adbb1e677c81c665ecef1a2b4bb8380"
+  integrity sha512-JD5fcdIuFxU4fQyXUu3w2KpAJHzTVdN+p4iOX2lMWSHMOoQdMAcpFLZzm9Z/2nmsoZ1a96QEhZ26e50xLBsgOQ==
+
 "@vue/devtools-api@^6.1.4":
   version "6.4.4"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.4.4.tgz#0b024fc8ca91bb4b6035abaf53c5aecc17119b3b"
@@ -11810,6 +11815,13 @@ vuetify@^2.6.11:
   version "2.6.11"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.6.11.tgz#d6eb9654dfdeb204b78f15d9e6adce85e090b3e6"
   integrity sha512-SX6BzS068t/RMj0d/sxxS/LsKdk9FpkL7CWShLyOMmJa/hiG63L0bvcopEaWYdRzzuQt7Nx174sk+KB6SvmYBw==
+
+vuex@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-4.1.0.tgz#aa1b3ea5c7385812b074c86faeeec2217872e36c"
+  integrity sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.11"
 
 watchpack-chokidar2@^2.0.0:
   version "2.0.0"

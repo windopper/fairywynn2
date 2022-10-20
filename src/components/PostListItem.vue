@@ -2,16 +2,33 @@
   <div class="post-list-item-container">
     <div class="post-list-item img"></div>
     <div class="post-list-item-info-container">
-      <div class="post-list-item-info title">title</div>
-      <div class="post-list-item-info content">content</div>
-      <div class="post-list-item-info date">date</div>
+      <div class="post-list-item-info title">{{title}}</div>
+      <div class="post-list-item-info content">{{content}}</div>
+      <div class="post-list-item-info date">{{date}}</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "PostListItem"
+  name: "PostListItem",
+  props: {
+    title: {
+      type: String,
+      required: false,
+      default: 'title'
+    },
+    content: {
+      type: String,
+      required: false,
+      default: 'content',
+    },
+    date: {
+      type: String,
+      required: false,
+      default: 'date',
+    }
+  }
 };
 </script>
 
@@ -20,7 +37,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: 200px;
 }
 

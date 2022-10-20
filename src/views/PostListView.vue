@@ -2,8 +2,7 @@
   <TheHeading :isScrollDown="isScrollDown" :handleModal="handleModal" />
   <SearchModal :isModalOpen="isModalOpen" :handleModal="handleModal" />
   <PostList>
-    <div class="test">hihi</div>
-    <PostListItem />
+    <PostListItem v-for="(post, i) in posts" :content="post.content" :title="post.title" :key="i"/>
   </PostList>
 </template>
 
@@ -25,7 +24,7 @@ export default {
       scrollTopValue: 0,
       isScrollDown: false,
       isModalOpen: false,
-      posts: []
+      posts: this.$store.getters.posts
     };
   },
   methods: {

@@ -31,15 +31,26 @@ export default {
   props: {
     tags: {
       type: [String],
-      required: true
+      required: true,
+    },
+    savePost: {
+      type: Function,
+      required: true,
     }
   },
   methods: {
-    $_Save: function() {},
+    $_Save: function() {
+      this.savePost();
+      this.$router.push('/'); // navigate to home
+      window.scrollTo(0, 0);
+    },
     $_AddTag: function() {
-      this.tags.push(this.inputTag);
+      const newTag = [
+        ...this.tags,
+        this.inputTag
+      ]
       this.inputTag = "";
-      this.$emit("update:tags", this.tags);
+      this.$emit("update:tags", newTag);
     },
     $_RemoveTag: function(index) {
       const newTags = this.tags.filter((tag, i) => i !== index);

@@ -3,7 +3,9 @@
     <transition name="fade">
       <div v-if="isModalOpen" class="modal-wrapper">
         <div class="modal-background" @click="$_modalClose"></div>
-        <div class="modal-container"></div>
+        <div class="modal-container">
+          <input class="modal-search-input" v-model="inputValue"/>
+        </div>
       </div>
     </transition>
   </teleport>
@@ -12,6 +14,11 @@
 <script>
 export default {
   name: "SearchModal",
+  data() {
+    return {
+      inputValue: '',
+    }
+  },
   props: {
     isModalOpen: Boolean,
     handleModal: Function
@@ -20,7 +27,7 @@ export default {
     $_modalClose: function() {
       this.handleModal(false);
     }
-  }
+  },
 };
 </script>
 
@@ -52,8 +59,18 @@ export default {
   z-index: 4;
   background: white;
   border-radius: 5px;
-  width: 300px;
-  height: 200px;
+  min-width: 300px;
+  min-height: 200px;
+  padding: 1rem;
+}
+
+.modal-search-input {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  outline: none;
 }
 
 .fade-enter-active,

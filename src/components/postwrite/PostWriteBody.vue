@@ -1,7 +1,7 @@
 <template>
   <div class="body-container">
     <div class="body-title-container">
-      <input />
+      <input :value="title" @input="$emit('update:title', $event.target.value)"/>
     </div>
     <div class="body-content-container">
       <textarea
@@ -24,6 +24,7 @@
 export default {
   name: "PostWriteBody",
   props: {
+    title: String,
     content: String,
     markDownedContent: String,
     showingContentType: String

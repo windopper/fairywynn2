@@ -22,6 +22,7 @@ export default {
   width: 100%;
   min-height: 100px;
   height: fit-content;
+  margin: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;

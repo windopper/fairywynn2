@@ -4,11 +4,12 @@
     :showingContentType="showingContentType"
   />
   <PostWriteBody
+    v-model:title="title"
     v-model:content="content"
     :markDownedContent="markDownedContent"
     :showingContentType="showingContentType"
   />
-  <PostWriteFooter v-model:tags="tags" />
+  <PostWriteFooter v-model:tags="tags" :savePost="savePost"/>
 </template>
 
 <script>
@@ -39,6 +40,16 @@ export default {
     },
     parseToMarkDown: function(value) {
       return marked.parse(value);
+    },
+    savePost() {
+      this.markDownedContent = this.parseToMarkDown(this.content);
+      const { title, content, tags, markDownedContent } = this.$data
+      this.$store.commit('registerPost', {
+        title,
+        content,
+        tags,
+        markDownedContent
+      })
     }
   }
 };
