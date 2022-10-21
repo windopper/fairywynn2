@@ -19,7 +19,7 @@ export default {
 .post-list-container {
   position: relative;
   top: 60px;
-  width: 100%;
+  width: calc(100% - 2rem);
   min-height: 100px;
   height: fit-content;
   margin: 1rem;

@@ -64,6 +64,7 @@ export default {
   padding: 1rem;
 }
 
+
 .modal-search-input {
   width: 100%;
   height: 50px;

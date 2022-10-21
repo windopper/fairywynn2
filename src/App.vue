@@ -22,6 +22,9 @@ export default {
 html,
 body,
 #app {
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 0;
   margin: 0;
   width: 100%;

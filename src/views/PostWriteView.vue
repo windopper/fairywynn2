@@ -17,6 +17,7 @@ import PostWriteBody from "../components/postwrite/PostWriteBody.vue";
 import PostWriteHeader from "../components/postwrite/PostWriteHeader.vue";
 import PostWriteFooter from "../components/postwrite/PostWriteFooter.vue";
 import { marked } from "marked";
+import {uuid} from 'uuidv4';
 export default {
   name: "PostWriteView",
   data() {
@@ -44,8 +45,10 @@ export default {
     savePost() {
       this.markDownedContent = this.parseToMarkDown(this.content);
       const { title, content, tags, markDownedContent } = this.$data
+      const id = uuid();
       this.$store.commit('registerPost', {
         title,
+        id,
         content,
         tags,
         markDownedContent

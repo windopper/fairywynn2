@@ -10,12 +10,19 @@ export const store = new createStore({
     getters: {
         posts(state) {
             return state.posts;
+        },
+        getPostById: (state) => (id) => {
+            return state.posts.filter(post => post.id === id)[0];
         }
     },
     mutations: {
         registerPost(state, post) {
-            console.log(post);
-            state.posts.push(post);
+            const currentDate = Date.now();
+            post.date = currentDate;
+            state.posts.unshift(post);
         },
+        deletePost(state, id) {
+            state.posts = state.posts.filter(post => post.id !== id);
+        }
     }
 })

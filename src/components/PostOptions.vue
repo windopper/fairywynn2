@@ -46,6 +46,10 @@ export default {
   border-radius: 4px;
 }
 
+.post-options-item:nth-child(1) {
+  margin-left: 0;
+}
+
 .post-options-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;

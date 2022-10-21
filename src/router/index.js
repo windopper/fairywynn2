@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import PostListView from "../views/PostListView.vue";
 import PostWriteView from "../views/PostWriteView.vue";
+import PostReadView from '../views/PostReadView.vue';
 const routes = [
   {
     path: "/",
@@ -9,6 +10,10 @@ const routes = [
   {
     path: "/write",
     component: PostWriteView
+  },
+  {
+    path: '/post/:id',
+    component: PostReadView
   }
 ];
 

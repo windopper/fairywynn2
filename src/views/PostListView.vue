@@ -2,7 +2,7 @@
   <TheHeading :isScrollDown="isScrollDown" :handleModal="handleModal" />
   <SearchModal :isModalOpen="isModalOpen" :handleModal="handleModal" />
   <PostList>
-    <PostListItem v-for="(post, i) in posts" :content="post.content" :title="post.title" :key="i"/>
+    <PostListItem v-for="(post, i) in posts" :content="post.content" :title="post.title" :post="post" :key="i"/>
   </PostList>
 </template>
 
