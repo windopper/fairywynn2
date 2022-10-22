@@ -1,27 +1,25 @@
 <template>
-    <div class="body-container">
+  <div class="body-container">
     <div class="body-title-container">
-      <h3>{{post.title}}</h3>
+      <h3>{{ post?.title }}</h3>
     </div>
     <div class="body-content-container">
-      <div
-        class="content-area"
-        v-html="post.markDownedContent"
-      ></div>
+      <div class="content-area" v-html="post?.markDownedContent"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'PostReadBody',
-    props: {
-        post: {
-            type: Object,
-            required: true,
-        }
+  name: "PostReadBody",
+  props: {
+    post: {
+      type: Object,
+      required: false,
+      default: null
     }
-}
+  }
+};
 </script>
 
 <style>
