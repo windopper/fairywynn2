@@ -1,5 +1,5 @@
 <template>
-  <PostReadHeader />
+  <PostReadHeader :post="post"/>
   <PostReadBody :post="post"/>
 </template>
 
@@ -17,9 +17,6 @@ export default {
       post: this.$store.getters.getPostById(this.$route.params.id)
     }
   },
-  mounted() {
-    console.log(this.post);
-  }
 }
 </script>
 

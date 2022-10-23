@@ -6,8 +6,11 @@
       </span>
     </div>
     <div class="post-options-item">
-      <span class="material-symbols-outlined">
+      <span v-if="viewBookMarkedPost" class="material-icons" @click="toggleViewBookMarkedPost">
         bookmark
+      </span>
+      <span v-else class="material-icons" @click="toggleViewBookMarkedPost">
+        bookmark_outlined
       </span>
     </div>
   </div>
@@ -16,6 +19,10 @@
 <script>
 export default {
   name: "PostOptions",
+  props: {
+    viewBookMarkedPost: Boolean,
+    toggleViewBookMarkedPost: Function,
+  },
   methods: {
     navigate: function(path) {
       this.$router.push(path);
@@ -53,5 +60,10 @@ export default {
 .post-options-item:hover {
   background-color: rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+.material-icons {
+  width: 24px;
+  height: 24px;
 }
 </style>

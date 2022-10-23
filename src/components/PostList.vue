@@ -1,17 +1,12 @@
 <template>
   <div class="post-list-container">
-    <PostOptions />
     <slot />
   </div>
 </template>
 
 <script>
-import PostOptions from "./PostOptions.vue";
 export default {
   name: "PostList",
-  components: {
-    PostOptions
-  }
 };
 </script>
 

@@ -1,9 +1,11 @@
 import { createStore } from "vuex";
 
+
 export const store = new createStore({
   state() {
     return {
-      posts: []
+      posts: [],
+      bookMarks: []
     };
   },
   getters: {
@@ -15,6 +17,15 @@ export const store = new createStore({
     },
     getPostsByTitle: state => title => {
       return state.posts.filter(post => post.title.includes(title));
+    },
+    getPostsByBookMarked: state => {
+      return state.posts.filter(post => state.bookMarks.includes(post.id))
+    },
+    bookMarks(state) {
+      return state.bookMarks;
+    },
+    isBookMarked: state => id => {
+      return state.bookMarks.includes(id);
     }
   },
   mutations: {
@@ -25,6 +36,12 @@ export const store = new createStore({
     },
     deletePost(state, id) {
       state.posts = state.posts.filter(post => post.id !== id);
+    },
+    addBookMark(state, id) {
+      state.bookMarks.unshift(id);
+    },
+    removeBookMark(state, id) {
+      state.bookMarks = state.bookMarks.filter(bookMarkId => bookMarkId !== id)
     }
-  }
+  },
 });
