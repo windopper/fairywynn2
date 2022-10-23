@@ -12,11 +12,11 @@ export default {
     PostReadBody,
     PostReadHeader,
   },
-  data() {
-    return {
-      post: this.$store.getters.getPostById(this.$route.params.id)
+  computed: {
+    post() {
+      return this.$store.getters.getPostById(this.$route.params.id)
     }
-  },
+  }
 }
 </script>
 

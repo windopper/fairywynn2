@@ -6,6 +6,12 @@
       </span>
     </span>
     <span class='header-items'>
+      <span class="material-symbols-outlined pointer" @click="deletePost">
+        delete
+      </span>
+      <span class="material-symbols-outlined pointer" @click="navigateToEditPage">
+        edit
+      </span>
       <span v-if="isBookMarked" class="material-icons pointer" @click="removeBookMark">
         bookmark
       </span>
@@ -26,11 +32,18 @@ export default {
     navigateBack() {
       this.$router.push("/");
     },
+    navigateToEditPage() {
+      this.$router.push(`/edit/${this.post?.id}`)
+    },
     addBookMark() {
       this.$store.commit('addBookMark', this.post?.id);
     },
     removeBookMark() {
       this.$store.commit('removeBookMark', this.post?.id)
+    },
+    deletePost() {
+      this.$store.commit('deletePost', this.post?.id)
+      this.navigateBack();
     }
   },
   computed: {

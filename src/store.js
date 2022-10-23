@@ -37,6 +37,12 @@ export const store = new createStore({
     deletePost(state, id) {
       state.posts = state.posts.filter(post => post.id !== id);
     },
+    editPost(state, newPost) {
+      state.posts = state.posts.map(post => {
+        if(post.id !== newPost.id) return post;
+        return newPost
+      })
+    },
     addBookMark(state, id) {
       state.bookMarks.unshift(id);
     },
